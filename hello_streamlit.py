@@ -5,6 +5,6 @@ data = st.file_uploader("upload file", type={"csv", "txt"})
 if data is not None:
     df = pd.read_csv(data)
     df = df[::-1]
-    df['time'] = df.index
+    df['number'] = df.index
     st.write(df)
-    st.line_chart(df, x="time", y="Close")
+    st.line_chart(df, x="number", y="Close")
